@@ -1,0 +1,26 @@
+{
+  "parser"  : "babel-eslint",
+  "extends" : [
+    "standard",
+    "standard-react"
+  ],
+  "env"     : {
+    "browser" : true,
+    "node": true,
+    "jasmine": true
+  },
+  "globals": {
+    "window": false
+  },
+  "rules": {
+    "semi" : [2, "always"],
+    "space-infix-ops": 0,
+    "max-len": [2, 120, 2],
+    "no-spaced-func": 2,
+    "space-before-function-paren": [2, "never"],
+    "no-multi-spaces": [2, { exceptions: { "VariableDeclarator": true, "ImportDeclaration": true } }],
+    "new-cap": [2, {
+      "newIsCap": false
+    }]
+  }
+}
