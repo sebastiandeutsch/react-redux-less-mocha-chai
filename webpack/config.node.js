@@ -49,10 +49,11 @@ module.exports = {
         loader: "css/locals?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]"
       },
       {
-        test: /\.sass$/,
+        test: /\.less$/,
         loaders: [
-          'css/locals?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'sass?indentedSyntax'
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'less'
         ]
       },
       {

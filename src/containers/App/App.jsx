@@ -13,7 +13,7 @@ import BookNew from 'containers/routes/BookNew';
 
 import StoreLoader from 'loaders/StoreLoader';
 
-import ApplicationStyles from './App.sass';
+import ApplicationStyles from './App.less';
 import ResetStyles from './Reset.css';
 
 const store = configureStore();

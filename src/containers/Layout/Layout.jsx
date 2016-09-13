@@ -9,7 +9,7 @@ import DevTools from 'containers/DevTools';
 
 import * as Actions from 'actions/Actions';
 
-import Styles from './Layout.sass';
+import Styles from './Layout.less';
 
 /**
  * Layout

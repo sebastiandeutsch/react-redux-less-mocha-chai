@@ -7,7 +7,7 @@ import * as Actions from 'actions/Actions';
 
 import Config from 'config/Config';
 
-import Styles from './Sidebar.sass';
+import Styles from './Sidebar.less';
 
 /**
  * Application connected React Component

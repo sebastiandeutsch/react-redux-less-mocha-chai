@@ -5,7 +5,7 @@ import { Router, Route, Link } from 'react-router';
 
 import * as Actions from 'actions/Actions';
 
-import Styles from './Content.sass';
+import Styles from './Content.less';
 
 /**
  * Displays the content
