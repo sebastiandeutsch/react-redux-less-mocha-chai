@@ -1,7 +1,7 @@
 {
   "name": "ReactReduxBoilerplate",
-  "version": "0.0.1",
-  "description": "A React + Redux boilerplate powered by Webpack",
+  "version": "1.0.0",
+  "description": "A React + Redux boilerplate powered by Webpack. Stylesheets with less. Testing with Mocha and Chai.",
   "main": "server.js",
   "scripts": {
     "build:webpack:production": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --config webpack/config.production.js",
