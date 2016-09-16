@@ -3,6 +3,7 @@ var fs = require('fs');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
+var WebpackLoaders = require('./webpack-loaders');
 
 module.exports = {
   entry: [
@@ -50,40 +51,6 @@ module.exports = {
     modulesDirectories: ['node_modules']
   },
   module: {
-    loaders: [
-      {
-        test: /(\.js|\.jsx)$/,
-        loaders: ['babel'],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        loader: "style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]"
-      },
-      {
-        test: /\.less$/,
-        loaders: [
-          'style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'less'
-        ]
-      },
-      {
-        test: /\.png$/,
-        loader: "url-loader?limit=100000"
-      },
-      {
-        test: /\.jpg$/,
-        loader: "file-loader"
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&mimetype=application/font-woff"
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
-      }
-    ]
+    loaders: WebpackLoaders
   }
 };

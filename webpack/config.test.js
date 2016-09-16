@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
+var WebpackLoaders = require('./webpack-loaders');
 
 module.exports = {
   devtool: 'eval',
@@ -38,44 +39,6 @@ module.exports = {
     'react/lib/ReactContext': true
   },
   module: {
-    loaders: [
-      {
-        test: /(\.js|\.jsx)$/,
-        loaders: ['babel'],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        loader: "style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]"
-      },
-      {
-        test: /\.less$/,
-        loaders: [
-          'style',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'less'
-        ]
-      },
-      {
-        test: /\.png$/,
-        loader: "url-loader?limit=100000"
-      },
-      {
-        test: /\.jpg$/,
-        loader: "file-loader"
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&mimetype=application/font-woff"
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
-      },
-      {
-        test: /\.json$/,
-        loader: 'json'
-      }
-    ]
+    loaders: WebpackLoaders
   }
 };
