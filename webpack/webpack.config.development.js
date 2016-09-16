@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 var WebpackNotifierPlugin = require('webpack-notifier');
 var WebpackLoaders = require('./webpack.loaders');
+var WebpackResolve = require('./webpack.resolve');
 
 module.exports = {
   devtool: 'source-map', // 'eval'
@@ -24,11 +25,7 @@ module.exports = {
     }),
     new WebpackNotifierPlugin()
   ],
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-    root: path.resolve('./src/'),
-    modulesDirectories: ['node_modules']
-  },
+  resolve: WebpackResolve,
   module: {
     loaders: WebpackLoaders
   }

@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 var WebpackLoaders = require('./webpack.loaders');
+var WebpackResolve = require('./webpack.resolve');
 
 module.exports = {
   devtool: 'eval',
@@ -27,17 +28,13 @@ module.exports = {
       'process.env.NODE_ENV': '"test"'
     })
   ],
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-    root: path.resolve('./src/'),
-    modulesDirectories: ['node_modules']
-  },
   externals: {
     'cheerio': 'window',
     'react/addons': true,
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true
   },
+  resolve: WebpackResolve,
   module: {
     loaders: WebpackLoaders
   }

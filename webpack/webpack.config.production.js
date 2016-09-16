@@ -4,6 +4,7 @@ var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
 var WebpackLoaders = require('./webpack.loaders');
+var WebpackResolve = require('./webpack.resolve');
 
 module.exports = {
   entry: [
@@ -45,11 +46,7 @@ module.exports = {
       });
     }
   ],
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
-    root: path.resolve('./src/'),
-    modulesDirectories: ['node_modules']
-  },
+  resolve: WebpackResolve,
   module: {
     loaders: WebpackLoaders
   }
