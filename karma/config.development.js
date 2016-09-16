@@ -5,8 +5,8 @@ module.exports = function(config) {
   var configOptions = _.assign({}, karmaBaseConfig, {
     autoWatch: true,
     browsers: [
-      // 'PhantomJS',
-      'Chrome',
+      'PhantomJS',
+      // 'Chrome',
       // 'Firefox',
       //'Safari',
       //'Opera',

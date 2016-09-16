@@ -1,3 +1,4 @@
+var path = require('path');
 var webpackTestConfig = require('../webpack/config.test.js');
 
 module.exports = {
@@ -7,14 +8,19 @@ module.exports = {
   files: [
     { pattern: '../webpack/tests.webpack.js', watched: true },
   ],
-  frameworks: [
-    'jasmine',
-    'jasmine-matchers'
-  ],
+  frameworks: ['mocha'],
   preprocessors: {
-    '../webpack/tests.webpack.js': ['webpack'],
+    '../webpack/tests.webpack.js': ['webpack', 'sourcemap'],
   },
-  reporters: ['progress'],
+  reporters: ['coverage', 'mocha'],
+  coverageReporter: {
+    dir: path.join(process.cwd(), 'coverage'),
+    reporters: [
+      { type: 'lcov', subdir: 'lcov' },
+      { type: 'html', subdir: 'html' },
+      { type: 'text-summary' },
+    ],
+  },
   webpack: webpackTestConfig,
   webpackMiddleware: {
     // webpack-dev-middleware configuration

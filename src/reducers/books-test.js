@@ -1,3 +1,4 @@
+import expect from 'expect';
 import books from './books';
 
 describe('Reducer', () => {
