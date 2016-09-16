@@ -3,7 +3,7 @@ var fs = require('fs');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
-var WebpackLoaders = require('./webpack-loaders');
+var WebpackLoaders = require('./webpack.loaders');
 
 module.exports = {
   entry: [

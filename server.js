@@ -1,7 +1,7 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var config = require('./webpack/config.development');
+var config = require('./webpack/webpack.config.development');
 
 var app = express();
 var compiler = webpack(config);

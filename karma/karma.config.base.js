@@ -1,16 +1,16 @@
 var path = require('path');
-var webpackTestConfig = require('../webpack/config.test.js');
+var webpackTestConfig = require('../webpack/webpack.config.test.js');
 
 module.exports = {
   browsers: [
     'PhantomJS'
   ],
   files: [
-    { pattern: '../webpack/tests.webpack.js', watched: true },
+    { pattern: 'tests.webpack.js', watched: true },
   ],
   frameworks: ['mocha'],
   preprocessors: {
-    '../webpack/tests.webpack.js': ['webpack', 'sourcemap'],
+    'tests.webpack.js': ['webpack', 'sourcemap'],
   },
   reporters: ['coverage', 'mocha'],
   coverageReporter: {

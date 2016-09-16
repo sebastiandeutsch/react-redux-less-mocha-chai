@@ -1,42 +1,33 @@
 var path = require('path');
 var webpack = require('webpack');
 var DirectoryNamedWebpackPlugin = require("directory-named-webpack-plugin");
-var WebpackLoaders = require('./webpack-loaders');
+var WebpackNotifierPlugin = require('webpack-notifier');
+var WebpackLoaders = require('./webpack.loaders');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'source-map', // 'eval'
   entry: [
     'webpack-hot-middleware/client',
     './src/index'
   ],
-  eslint: {
-    configFile: '.eslintrc',
-    emitError: true,
-    emitWarning: true,
-  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/'
   },
   plugins: [
     new webpack.ResolverPlugin(new DirectoryNamedWebpackPlugin()),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"test"'
-    })
+      'process.env.NODE_ENV': '"development"'
+    }),
+    new WebpackNotifierPlugin()
   ],
   resolve: {
     extensions: ['', '.js', '.jsx'],
     root: path.resolve('./src/'),
     modulesDirectories: ['node_modules']
-  },
-  externals: {
-    'cheerio': 'window',
-    'react/addons': true,
-    'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true
   },
   module: {
     loaders: WebpackLoaders
