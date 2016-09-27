@@ -4,9 +4,11 @@
   "description": "A React + Redux boilerplate powered by Webpack. Stylesheets with less. Testing with Mocha and Chai.",
   "main": "server.js",
   "scripts": {
-    "build:webpack:production": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --config webpack/config.production.js",
-    "build:webpack:node": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --progress --config webpack/config.node.js",
-    "lint": "./node_modules/eslint/bin/eslint.js src",
+    "build:webpack:devserver": "NODE_ENV=production webpack --progress --config webpack/webpack.config.devserver.js",
+    "build:webpack:integration": "NODE_ENV=integration webpack --progress --config webpack/webpack.config.integration.js",
+    "build:webpack:pilot": "NODE_ENV=pilot webpack --progress --config webpack/webpack.config.pilot.js",
+    "build:webpack:prod": "NODE_ENV=prod webpack --progress --config webpack/webpack.config.prod.js",
+    "lint": "eslint src",
     "start": "node server.js",
     "test": "karma start karma/karma.config.development.js"
   },

@@ -15,6 +15,20 @@ This project contains the following frontend stack:
 npm install
 npm start # point a browser to localhost:8000
 ```
+
+## Environments
+
+This repository has the following environments:
+
+- development
+- devserver
+- integration
+- pilot
+- prod
+- test
+
+Each environemt can has it's own webpack configuration.
+
 ## Coding Guidelines
 
-Use arrow function where appropriate
+##
