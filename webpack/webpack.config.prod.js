@@ -21,7 +21,7 @@ module.exports = Object.assign(
         { from: 'src/public' }
       ]),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"prod"'
+        __ENVIRONMENT__: '"prod"'
       }),
       new webpack.optimize.UglifyJsPlugin({minimize: true}),
       // this one replaces the bundle.js with the hashed version for caching reasons
