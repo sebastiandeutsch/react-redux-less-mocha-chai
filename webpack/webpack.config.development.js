@@ -9,6 +9,11 @@ var WebpackBaseConfig = require('./webpack.config.base');
 module.exports = Object.assign(
   WebpackBaseConfig,
   {
+    entry: [
+      'babel-polyfill',
+      'webpack-hot-middleware/client',
+      './src/index'
+    ],
     plugins: [
       new webpack.ResolverPlugin(new DirectoryNamedWebpackPlugin()),
       new webpack.HotModuleReplacementPlugin(),
