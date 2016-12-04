@@ -8,7 +8,7 @@ export default function configureStore(initialState) {
   let enhancer = applyMiddleware(thunk);
 
   // Add development tools
-  if (process.env.NODE_ENV === 'development') {
+  if (__ENVIRONMENT__ === 'development') {
     // Require DevTools only in development
     // so it is not included in the production build
     const DevTools = require('containers/DevTools').default;

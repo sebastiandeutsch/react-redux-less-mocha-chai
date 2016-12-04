@@ -24,7 +24,7 @@ export class Layout extends React.Component {
         <Content>
           {this.props.children}
         </Content>
-        {process.env.NODE_ENV != "production" && devTools}
+        {__ENVIRONMENT__ != "production" && devTools}
       </div>
     )
   }
