@@ -8,8 +8,6 @@ import { match, Router, Route, IndexRoute, browserHistory, useRouterHistory } fr
 import Layout from 'containers/Layout';
 import Help from 'containers/routes/Help';
 import Hello from 'containers/routes/Hello';
-import BooksIndex from 'containers/routes/BooksIndex';
-import BookNew from 'containers/routes/BookNew';
 
 import StoreLoader from 'loaders/StoreLoader';
 
@@ -19,11 +17,10 @@ import ResetStyles from './Reset.css';
 const store = configureStore();
 
 let routes = <Route path='/' component={Layout}>
-  <IndexRoute component={BooksIndex} />
+  <IndexRoute component={Hello} />
   <Route path='help' component={Help}>
     <Route path=":id" component={Help} />
   </Route>
-  <Route path='book/new' component={BookNew} />
 </Route>;
 
 /**
