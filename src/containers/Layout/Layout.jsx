@@ -19,7 +19,7 @@ export class Layout extends React.Component {
     const devTools = <DevTools />;
 
     return (
-      <div className="DB">
+      <div>
         <Sidebar />
         <Content>
           {this.props.children}

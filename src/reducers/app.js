@@ -4,8 +4,7 @@ import { browserHistory } from 'react-router';
 const initialState = {
   url: '/',
   something: '',
-  debug: false,
-  brand: "DB"
+  debug: false
 };
 
 const actionsMap = {
