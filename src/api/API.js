@@ -47,17 +47,4 @@ export default class API {
       '/something'
     );
   }
-
-  loadBooks() {
-    return this._get(
-      '/books'
-    );
-  }
-
-  createBook(book) {
-    return this._post(
-      '/books',
-      book
-    );
-  }
 }

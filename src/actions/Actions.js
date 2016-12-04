@@ -55,35 +55,3 @@ export function changeSomethingAsync(something) {
     );
   };
 };
-
-export function loadBooks() {
-  return (dispatch) => {
-    let api = new API();
-    return api.loadBooks().then(
-      (response) => {
-        dispatch({
-          type: types.SET_BOOKS,
-          payload: response.data
-        });
-        console.log(response);
-      }
-    );
-  };
-};
-
-export function createBook(book) {
-  return (dispatch) => {
-    let api = new API();
-    return api.createBook(book).then(
-      (response) => {
-        dispatch({
-          type: types.CREATE_BOOK,
-          payload: book
-        });
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
-}
