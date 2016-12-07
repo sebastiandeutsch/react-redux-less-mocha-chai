@@ -8,14 +8,13 @@ export default function configureStore(initialState) {
   let enhancer = applyMiddleware(thunk);
 
   // Add development tools
-  if (__ENVIRONMENT__ === 'development') {
-    // Require DevTools only in development
-    // so it is not included in the production build
-    const DevTools = require('containers/DevTools').default;
-    enhancer = compose(
-      enhancer,
-      DevTools.instrument()
-    );
+  if (__ENVIRONMENT__ === 'development' && window.__REDUX_DEVTOOLS_EXTENSION__) {
+    if(window) {
+      enhancer = compose(
+        enhancer,
+        window.__REDUX_DEVTOOLS_EXTENSION__()
+      )
+    }
   }
 
   const store = createStore(rootReducer, initialState, enhancer);

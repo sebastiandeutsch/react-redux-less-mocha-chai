@@ -6,11 +6,11 @@ module.exports = {
     'PhantomJS'
   ],
   files: [
-    { pattern: 'tests.webpack.js', watched: true },
+    { pattern: 'tests-bundler.js', watched: true },
   ],
   frameworks: ['mocha'],
   preprocessors: {
-    'tests.webpack.js': ['webpack', 'sourcemap'],
+    'tests-bundler.js': ['webpack', 'sourcemap'],
   },
   reporters: ['coverage', 'mocha'],
   coverageReporter: {

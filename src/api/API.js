@@ -47,4 +47,17 @@ export default class API {
       '/something'
     );
   }
+
+  getBooks() {
+    return this._get(
+      '/books'
+    )
+  }
+
+  postBook(book) {
+    return this._post(
+      '/books',
+      book
+    )
+  }
 }

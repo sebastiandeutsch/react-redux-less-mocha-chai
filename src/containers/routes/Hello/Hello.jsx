@@ -32,11 +32,15 @@ export class Hello extends React.Component {
     return (
       <div className={Styles.Header}>
         <h2>
-          Hello World!
+          Hello Workshop!
         </h2>
 
         <FlatButton onClick={this.handleChangeSomethingClick}>
           Do somehting!
+        </FlatButton>
+
+        <FlatButton onClick={this.handleChangeSomethingClick}>
+          Hey Workshop
         </FlatButton>
 
         <FlatButton onClick={this.handleChangeSomethingElseClick}>

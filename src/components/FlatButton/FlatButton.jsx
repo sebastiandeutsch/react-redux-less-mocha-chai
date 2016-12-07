@@ -1,7 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { Router, Route, Link } from 'react-router';
 
 import Styles from './FlatButton.less';
 

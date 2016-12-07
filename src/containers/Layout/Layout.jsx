@@ -5,7 +5,6 @@ import { Router, Route, Link } from 'react-router';
 
 import Sidebar from 'containers/Sidebar';
 import Content from 'containers/Content';
-import DevTools from 'containers/DevTools';
 
 import * as Actions from 'actions/Actions';
 
@@ -16,15 +15,12 @@ import Styles from './Layout.less';
  */
 export class Layout extends React.Component {
   render() {
-    const devTools = <DevTools />;
-
     return (
       <div>
         <Sidebar />
         <Content>
           {this.props.children}
         </Content>
-        {__ENVIRONMENT__ != "production" && devTools}
       </div>
     )
   }

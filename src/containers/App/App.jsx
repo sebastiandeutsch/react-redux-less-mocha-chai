@@ -9,18 +9,20 @@ import Layout from 'containers/Layout';
 import Help from 'containers/routes/Help';
 import Hello from 'containers/routes/Hello';
 
+import BooksIndex from 'containers/routes/BooksIndex';
+import BookCreate from 'containers/routes/BookCreate';
+
 import StoreLoader from 'loaders/StoreLoader';
 
 import ApplicationStyles from './App.less';
 import ResetStyles from './Reset.css';
 
 const store = configureStore();
+store.dispatch(Actions.loadBooks());
 
 let routes = <Route path='/' component={Layout}>
-  <IndexRoute component={Hello} />
-  <Route path='help' component={Help}>
-    <Route path=":id" component={Help} />
-  </Route>
+  <IndexRoute component={BooksIndex} />
+  <Route path='book/new' component={BookCreate} />
 </Route>;
 
 /**

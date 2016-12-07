@@ -1,8 +1,7 @@
 import * as Actions from 'constants/ActionTypes';
-import { browserHistory } from 'react-router';
 
 const initialState = {
-  url: '/',
+  path: '/',
   something: '',
   debug: false
 };
@@ -22,10 +21,10 @@ const actionsMap = {
   /**
    * Updates the url
    */
-  [Actions.UPDATE_URL]: (state, action) => {
+  [Actions.UPDATE_PATH]: (state, action) => {
     state = { ...state };
 
-    browserHistory[action.payload.method](action.payload.args);
+    state.path = action.payload;
 
     return state;
   }
